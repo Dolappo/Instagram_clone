@@ -13,7 +13,7 @@ class PostCard extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(horizontal: 12),
           leading: CircleAvatar(),
           title: Text("Username"),
-          subtitle: Text("Location"),
+          subtitle: Text("Locationn"),
           trailing: IconButton(
             onPressed: () {},
             icon: Icon(Icons.more_vert),
