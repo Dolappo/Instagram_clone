@@ -1,8 +1,8 @@
-import 'package:instagram_clone/ui/screens/home/pages/home.dart';
+import 'package:instagram_clone/ui/screens/main_screen/home/pages/home.dart';
 import 'package:animations/animations.dart';
-import 'package:instagram_clone/ui/screens/home/pages/notifs.dart';
-import 'package:instagram_clone/ui/screens/home/pages/profile.dart';
-import 'package:instagram_clone/ui/screens/home/pages/search_explore.dart';
+import 'package:instagram_clone/ui/screens/main_screen/home/pages/notifs.dart';
+import 'package:instagram_clone/ui/screens/main_screen/home/pages/profile.dart';
+import 'package:instagram_clone/ui/screens/main_screen/home/pages/search_explore.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'home_view_model.dart';
@@ -20,6 +20,8 @@ class HomeScreen extends StatelessWidget {
               onTap: (page) => model.setPage(page),
               currentIndex: model.currentPage,
               selectedItemColor: Colors.black,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(

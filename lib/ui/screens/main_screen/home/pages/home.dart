@@ -25,22 +25,33 @@ class StoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.1,
+      height: MediaQuery.of(context).size.height * 0.125,
       child: ListView.builder(
           shrinkWrap: true,
           itemCount: 10,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return Row(
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Colors.blue,
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-              ],
+            return Padding(
+              padding: EdgeInsets.only(right: 5),
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.red),
+                    ),
+                    padding: EdgeInsets.all(3),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3,
+                  ),
+                  Text("Username"),
+                ],
+              ),
             );
           }),
     );
