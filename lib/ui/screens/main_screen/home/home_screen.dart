@@ -2,7 +2,8 @@ import 'package:instagram_clone/ui/screens/main_screen/home/pages/home.dart';
 import 'package:animations/animations.dart';
 import 'package:instagram_clone/ui/screens/main_screen/home/pages/notifs.dart';
 import 'package:instagram_clone/ui/screens/main_screen/home/pages/profile.dart';
-import 'package:instagram_clone/ui/screens/main_screen/home/pages/search_explore.dart';
+import 'package:instagram_clone/ui/screens/main_screen/home/pages/search.dart';
+import 'package:instagram_clone/ui/screens/main_screen/home/pages/explore.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'home_view_model.dart';
@@ -43,6 +44,17 @@ class HomeScreen extends StatelessWidget {
                     Icons.select_all,
                     color: Colors.black,
                   ),
+                  label: 'Search',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.add_circle_outline_rounded,
+                    color: Colors.black,
+                  ),
+                  activeIcon: Icon(
+                    Icons.add_circle,
+                    color: Colors.black,
+                  ),
                   label: 'Explore',
                 ),
                 BottomNavigationBarItem(
@@ -77,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                     return SharedAxisTransition(
                         animation: primaryAnimation,
                         secondaryAnimation: secondaryAnimation,
-                        transitionType: SharedAxisTransitionType.scaled,
+                        transitionType: SharedAxisTransitionType.horizontal,
                         child: child);
                   },
                   child: getCurrentPage(model)),
@@ -92,10 +104,12 @@ Widget getCurrentPage(HomeViewModel model) {
     case 0:
       return const HomePage();
     case 1:
-      return const SearchExplorePage();
+      return const SearchPage();
     case 2:
-      return const NotifPage();
+      return const ExplorePage();
     case 3:
+      return const NotifPage();
+    case 4:
       return const ProfilePage();
     default:
       return const HomePage();
