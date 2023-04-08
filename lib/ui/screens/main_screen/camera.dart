@@ -6,8 +6,12 @@ class CameraPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
-      child: Text("This is for camera"),
-    );
+        color: Colors.black,
+        child: Center(
+          child: Text(
+            "This is for camera",
+            style: TextStyle(color: Colors.white),
+          ),
+        ));
   }
 }
