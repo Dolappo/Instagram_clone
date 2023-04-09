@@ -32,6 +32,21 @@ class SearchPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            Expanded(
+                child: GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 5,
+                        mainAxisSpacing: 5),
+                    itemCount: 21,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        height: 200,
+                        width: 200,
+                        color: Colors.green,
+                      );
+                    }))
           ],
         ));
   }
